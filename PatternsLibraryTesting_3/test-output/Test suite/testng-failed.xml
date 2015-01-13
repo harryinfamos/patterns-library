@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test suite]">
+  <parameter name="BrowserType" value="InternetExplorer"/>
+  <test name="InternetExplorer test(failed)">
+    <parameter name="BrowserType" value="InternetExplorer"/>
+    <groups>
+      <run>
+        <include name="CSSPatternsTest"/>
+        <include name="ATTPatternsTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.tek.test.patterns.VerifyPatternsOnSite">
+        <methods>
+          <include name="intialSetUp"/>
+          <include name="intialSetUp"/>
+          <include name="intialSetUp"/>
+          <include name="closureMethod"/>
+          <include name="closureMethod"/>
+          <include name="closureMethod"/>
+        </methods>
+      </class> <!-- com.tek.test.patterns.VerifyPatternsOnSite -->
+      <class name="com.tek.test.patterns.VerifyComponents">
+        <methods>
+          <include name="intialSetUp"/>
+          <include name="intialSetUp"/>
+          <include name="intialSetUp"/>
+          <include name="testVerifyButton"/>
+          <include name="closureMethod"/>
+          <include name="closureMethod"/>
+          <include name="closureMethod"/>
+        </methods>
+      </class> <!-- com.tek.test.patterns.VerifyComponents -->
+    </classes>
+  </test> <!-- InternetExplorer test(failed) -->
+</suite> <!-- Failed suite [Test suite] -->
