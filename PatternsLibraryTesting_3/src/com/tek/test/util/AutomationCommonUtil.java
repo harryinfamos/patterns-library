@@ -563,6 +563,64 @@ public class AutomationCommonUtil {
 		
 }
     
+    public boolean verifyCssObjectProperties(WebElement byWebElement, CssAccordionData stringsObjectInfo){
+
+    	WebElement myDynamicElement;
+    	try {
+        	
+        	myDynamicElement= byWebElement;
+
+            System.out.println();
+            System.out.println(stringsObjectInfo.getCssObjectName());
+
+            if (stringsObjectInfo.getFontFamily() != null) {
+                if (myDynamicElement.getCssValue("font-family").contentEquals(stringsObjectInfo.getFontFamily())) {
+                    System.out.println("Font-Family" + strPassed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily());
+                    HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Font-Family" + strPassed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily(),false);
+                } else {
+                    System.out.println("Font-Family" + strFailed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily());
+                    HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Font-Family" + strFailed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily(),false);
+                }
+            }
+            if (stringsObjectInfo.getFontSize() != null) {
+                if (myDynamicElement.getCssValue("font-size").contentEquals(stringsObjectInfo.getFontSize())) {
+                    System.out.println("Font-Size" + strPassed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                    HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Font-Size" + strPassed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                } else {
+                    System.out.println("Font-Size" + strFailed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                    HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Font-Size" + strFailed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                }
+            }
+            if (stringsObjectInfo.getBorderStyle() != null) {
+                if (myDynamicElement.getCssValue("border-top-style").contentEquals(stringsObjectInfo.getBorderStyle())) {
+                    System.out.println("Border-Style" + strPassed + myDynamicElement.getCssValue("border-top-style") + strExpected + stringsObjectInfo.getBorderStyle());
+                    HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Border-Style" + strPassed + myDynamicElement.getCssValue("border-top-style") + strExpected + stringsObjectInfo.getBorderStyle());
+                } else {
+                    System.out.println("Border-Style" + strFailed + myDynamicElement.getCssValue("border-top-style") + strExpected + stringsObjectInfo.getBorderStyle());
+                    HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Border-Style" + strFailed + myDynamicElement.getCssValue("border-top-style") + strExpected + stringsObjectInfo.getBorderStyle());
+                }
+            }
+            if (stringsObjectInfo.getPadding() != null) {
+                if (myDynamicElement.getCssValue("padding-right").contentEquals(stringsObjectInfo.getPadding())) {
+                    HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Padding-Right" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getPadding());
+                    System.out.println("Padding-Right" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getPadding());
+                } else {
+                    HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Padding-Right" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getPadding());
+                    System.out.println("Padding-Right" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getPadding());
+                }
+            }
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println();
+            System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+            System.out.println(e.getMessage());
+            HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+            return false;
+        }
+		
+}
+    
     //Hover and Takes the ScreenShot of the page
     public void verifyHover(By byWebElement){
         WebElement webElement = driver.findElement(byWebElement);

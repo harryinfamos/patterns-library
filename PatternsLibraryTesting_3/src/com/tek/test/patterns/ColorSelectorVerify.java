@@ -85,15 +85,7 @@ public class ColorSelectorVerify {
 			 quickView.click();
 			 byColorSelector=By.xpath("//div[@class='att-radio att-color-selector__item'][1]");
 		    boolean bolColorSelectorVerify = new AutomationCommonUtil(driver).verifyCssObjectProperties(byColorSelector, cssColorSelector);  
-		    /*WebElement selector= (WebElement) byWebButton;
-		    selector.click();
-		    
-		    if(selector.getAttribute("class").contains("att-radio--on")) {
-		    	System.out.println("Class changed after click");
-		    	HtmlLogUtil.writeToLog(0,"Class changed to radio-on",false);
-		    } else {
-		    	HtmlLogUtil.writeToLog(1,"Class changed to radio-on",false);
-		    }	*/
+		   
 		    return bolColorSelectorVerify; 
 		  }
 	  

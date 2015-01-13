@@ -31,6 +31,7 @@ public class VerifyComponents {
 	  private HtmlLogUtil htmlLogUtil;
 	  public static ButtonVerify bVerify;
 	  public static ColorSelectorVerify cVerify;
+	  public static AccordionVerify aVerify;
 	  
 	  
 	 @BeforeGroups(enabled = true, groups= { "CSSPatternsTest"})
@@ -101,8 +102,8 @@ public class VerifyComponents {
 		 
 		//Verify CSS Properties - Accordion
 		 String logPath = htmlLogUtil.createHtmlLogFile("Accordion-Patterns-VerifyTest");
-		 AccordionVerify aVerify = new AccordionVerify(driver);
-		 assert aVerify.verifyAccordion();	
+		 aVerify = new AccordionVerify(driver);
+		 aVerify.verifyAccordion();	
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("Accordion001","Verify Accordion CSS Properties",logPath);
 	 }

@@ -48,7 +48,7 @@ public class VerifyPatternsOnSite {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 }
 	 
-	 @Test(priority = 1, enabled = true, groups= { "ATTPatternsTest"})
+	 @Test(priority = 1, enabled = false, groups= { "ATTPatternsTest"})
 	 public void testVerifyButton() throws Exception{
 		 //Verify Button on Veterans site adheres to the patterns library
 		  Thread.sleep(10000);
@@ -60,17 +60,20 @@ public class VerifyPatternsOnSite {
 		 htmlLogUtil.writeToSummaryLog("ButtonTest001","Verify Button CSS Properties",logPath);
 	 }
 	 
-	 @Test(priority = 2, enabled = false, groups= { "ATTPatternsTest"})
+	 @Test(priority = 2, enabled = true, groups= { "ATTPatternsTest"})
 	 public void testVerifyAccordian() throws Exception{
+		 Thread.sleep(10000);
 		 String logPath = htmlLogUtil.createHtmlLogFile("Accordian-Patterns-Veterans-VerifyTest");
-		 driver.get("http://veterans.tekzenit.pt/scholarships/");
-		 AccordionVerify aVerify = new AccordionVerify(driver);
-		 assert aVerify.verifyAccordion();	
+		 AccordionVerify aVerify = VerifyComponents.aVerify;
+		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/wireless/mobile-plans.page");
+//		 WebElement  element =driver.findElement(By.xpath("//div[@class='att-accordion att-accordion--no-box'][1]//div[@class='att-accordion__group'][1]"));
+		 WebElement  element =driver.findElement(By.xpath(".//*[@id='1411672555838']/div/div/div/div[1]/div[1]/div[1]/a"));
+		 aVerify.verifyAccordionPatternsOnAtt(element);	
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("AccordionTest001","Verify Accordion CSS Properties",logPath);
 	 }
 	 
-	 @Test(priority = 3, enabled = true, groups= { "ATTPatternsTest"})
+	 @Test(priority = 3, enabled = false, groups= { "ATTPatternsTest"})
 	 public void testVerifyColorSelector() throws Exception{
 		 
 		 Thread.sleep(10000);
