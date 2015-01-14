@@ -30,7 +30,6 @@ public class HtmlLogUtil {
     private static String logSummaryPath;
     private static String currDir;
     private static String strExecutionSummary;
-    private static String browserName;
     private static int testsPassed = 0;
     private static int testsFailed = 0;
 

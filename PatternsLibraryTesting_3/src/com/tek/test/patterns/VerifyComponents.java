@@ -32,6 +32,7 @@ public class VerifyComponents {
 	  public static ButtonVerify bVerify;
 	  public static ColorSelectorVerify cVerify;
 	  public static AccordionVerify aVerify;
+	  public static CarouselVerify caVerify;
 	  
 	  
 	 @BeforeGroups(enabled = true, groups= { "CSSPatternsTest"})
@@ -106,6 +107,17 @@ public class VerifyComponents {
 		 aVerify.verifyAccordion();	
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("Accordion001","Verify Accordion CSS Properties",logPath);
+	 }
+	 
+	 @Test(priority = 5, enabled = true, groups= { "CSSPatternsTest"})
+	 public void testVerifyCarousel() throws Exception{
+		 
+		//Verify CSS Properties - Accordion
+		 String logPath = htmlLogUtil.createHtmlLogFile("Carousel-Patterns-VerifyTest");
+		 caVerify = new CarouselVerify(driver);
+		 caVerify.verifyCarousel();	
+		 htmlLogUtil.closeHtmlLogFile();
+		 htmlLogUtil.writeToSummaryLog("Accordion001","Verify Carousel CSS Properties",logPath);
 	 }
 
 	 @AfterGroups(groups= { "CSSPatternsTest"})

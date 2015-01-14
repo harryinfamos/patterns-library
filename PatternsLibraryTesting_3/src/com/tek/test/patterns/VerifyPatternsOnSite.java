@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.tek.test.util.AutomationCommonUtil;
 import com.tek.test.util.HtmlLogUtil;
 import com.tek.test.util.ReadPropertiesFileUtil;
 import com.tek.test.util.SeleniumDriverUtil;
@@ -23,6 +24,8 @@ public class VerifyPatternsOnSite {
 	  private String baseUrl;
 	  private Properties prop;
 	  private HtmlLogUtil htmlLogUtil;
+	  
+	  private boolean flag;
 	  
 	  @BeforeGroups(enabled = true, groups= { "ATTPatternsTest"})
 	  @Parameters({ "BrowserType" })
@@ -46,9 +49,11 @@ public class VerifyPatternsOnSite {
 	    driver.get(baseUrl);
 	    driver.manage().window().maximize();    
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    
+	    flag= AutomationCommonUtil.patternsPassed;
 	 }
 	 
-	 @Test(priority = 1, enabled = false, groups= { "ATTPatternsTest"})
+	 @Test(priority = 1, enabled = true, groups= { "ATTPatternsTest"})
 	 public void testVerifyButton() throws Exception{
 		 //Verify Button on Veterans site adheres to the patterns library
 		  Thread.sleep(10000);
@@ -73,21 +78,35 @@ public class VerifyPatternsOnSite {
 		 htmlLogUtil.writeToSummaryLog("AccordionTest001","Verify Accordion CSS Properties",logPath);
 	 }
 	 
-	 @Test(priority = 3, enabled = false, groups= { "ATTPatternsTest"})
+	 @Test(priority = 3, enabled =true , groups= { "ATTPatternsTest"})
 	 public void testVerifyColorSelector() throws Exception{
 		 
 		 Thread.sleep(10000);
 	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
-		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-Veterans-VerifyTest"); 
+		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-At&t-VerifyTest"); 
 		 ColorSelectorVerify cVerify = VerifyComponents.cVerify;
 		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/shop/wireless/all-devices");
-		  WebElement quickView=driver.findElement(By.xpath("//a[@id='quick_view_prod11960193']"));
+		  WebElement quickView=driver.findElement(By.xpath("//a[@id='quick_view_prod12860124']"));
 		  quickView.click();
 		  Thread.sleep(2000);
 		  WebElement element=driver.findElement(By.xpath("//div[@class='att-radio att-color-selector__item'][1]"));
 		 cVerify.verifyColorSelectorPatternsOnAtt(element);
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("ColorSelectorTest001","Verify ColorSelector CSS Properties",logPath);
+	 }
+	 
+	 @Test(priority = 4, enabled =true , groups= { "ATTPatternsTest"})
+	 public void testVerifyCarousel() throws Exception{
+		 
+		 Thread.sleep(10000);
+	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
+		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-At&t-VerifyTest"); 
+		 CarouselVerify caVerify = VerifyComponents.caVerify;
+		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop.page");
+		  WebElement element=driver.findElement(By.xpath("//div[@class='bx-pager bx-default-pager']"));
+		 caVerify.verifyCarouselPatternsOnAtt(element);
+		 htmlLogUtil.closeHtmlLogFile();
+		 htmlLogUtil.writeToSummaryLog("CarouselTest001","Verify Carousel CSS Properties",logPath);
 	 }
 	 
 	 @AfterGroups(groups= { "ATTPatternsTest"})

@@ -28,7 +28,7 @@
 	    <class name="com.tek.test.patterns.VerifyComponents"/>       
 	    <class name="com.tek.test.patterns.VerifyPatternsOnSite"/>
     </classes>
-  </test> <!-- Chrome test -->
+  </test> Chrome test
 
  <test verbose="2" name="InternetExplorer test">
    <parameter name="BrowserType"  value="InternetExplorer"/>
@@ -42,7 +42,7 @@
 	    <class name="com.tek.test.patterns.VerifyComponents"/>       
 	    <class name="com.tek.test.patterns.VerifyPatternsOnSite"/>
     </classes>
-  </test> <!-- InternetExplorer test -->
+  </test> InternetExplorer test
   
  
  

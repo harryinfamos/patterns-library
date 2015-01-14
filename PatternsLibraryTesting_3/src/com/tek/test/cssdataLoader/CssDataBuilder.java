@@ -23,6 +23,11 @@ public class CssDataBuilder {
     private String accordianFontSize;
     private String accordianBorderStyle;
     private String accordianPadding;
+    private String carouselBackgroundColor;
+    private String carouselBorderRaduis;
+    private String carouselMargin;
+    private String carouselPadding;
+	private String carouselTextAlign;
 
     public CssButtonData buildButton() {
         return new CssButtonData(cssObjectName,fontFamily, fontSize, width, height, lineHeight, color,hoverColor,leftPadding,rightPadding);
@@ -38,6 +43,10 @@ public class CssDataBuilder {
     
     public CssAccordionData accordianBuild() {
         return new CssAccordionData(cssObjectName,accordianFontFamily,accordianFontSize, accordianBorderStyle, accordianPadding);
+    }
+    
+    public CssCarouselData carouselBuild() {
+        return new CssCarouselData(cssObjectName,carouselBackgroundColor,carouselBorderRaduis,carouselMargin,carouselPadding,carouselTextAlign);
     }
 
 
@@ -129,4 +138,31 @@ public class CssDataBuilder {
         this.accordianPadding = accordianPadding;
         return this;
     }
+    
+    public CssDataBuilder withCarouselBackgroundColor(String carouselBackgroundColor) {
+        this.carouselBackgroundColor = carouselBackgroundColor;
+        return this;
+    }
+    
+    public CssDataBuilder withCarouselBorderRaduis(String carouselBorderRaduis) {
+        this.carouselBorderRaduis = carouselBorderRaduis;
+        return this;
+    }
+    
+    public CssDataBuilder withCarouselMargin(String carouselMargin) {
+        this.carouselMargin = carouselMargin;
+        return this;
+    }
+    
+    public CssDataBuilder withCarouselPadding(String carouselPadding) {
+        this.carouselPadding = carouselPadding;
+        return this;
+    }
+    
+    public CssDataBuilder withCarouselTextAlign(String carouselTextAlign) {
+        this.carouselTextAlign = carouselTextAlign;
+        return this;
+    }
+    
+    
 }

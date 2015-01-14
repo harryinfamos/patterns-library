@@ -2,6 +2,7 @@ package com.tek.test.util;
 
 import com.tek.test.cssdataLoader.CssAccordionData;
 import com.tek.test.cssdataLoader.CssButtonData;
+import com.tek.test.cssdataLoader.CssCarouselData;
 import com.tek.test.cssdataLoader.CssColorSelectorData;
 import com.tek.test.cssdataLoader.CssDropDownData;
 
@@ -21,6 +22,8 @@ public class AutomationCommonUtil {
     private final String strFailed = " : Failed -- Actual : ";
     private final String strPassed = " : Passed -- Actual : ";
     private final String strExpected = " Expected :";
+    
+    public static boolean patternsPassed=true; 
 
     public AutomationCommonUtil(WebDriver driver){
         this.driver = driver;
@@ -401,6 +404,7 @@ public class AutomationCommonUtil {
                     System.out.println("Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth());
                     HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth(),false);
                 } else {
+                	patternsPassed=false;
                     System.out.println("Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth());
                     HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth(),false);
                 }
@@ -410,6 +414,7 @@ public class AutomationCommonUtil {
                     System.out.println("Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                 } else {
+                	patternsPassed=false;
                     System.out.println("Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                 }
@@ -419,6 +424,7 @@ public class AutomationCommonUtil {
                     System.out.println("Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                 } else {
+                	patternsPassed=false;
                     System.out.println("Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                 }
@@ -428,6 +434,7 @@ public class AutomationCommonUtil {
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Cursor" + strPassed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                     System.out.println("Cursor" + strPassed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                 } else {
+                	patternsPassed=false;
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Cursor" + strFailed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                     System.out.println("Cursor" + strFailed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                 }
@@ -620,6 +627,186 @@ public class AutomationCommonUtil {
         }
 		
 }
+    
+  //VerifyCSSProperties for Button
+    public boolean verifyCssObjectProperties(By byWebElement, CssCarouselData stringsObjectInfo){
+
+    	WebElement myDynamicElement;
+    	
+            try {
+            	
+            	//Wait for Element to Load
+                myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(byWebElement));
+            	//myDynamicElement= byWebElement;
+                System.out.println();
+                System.out.println(stringsObjectInfo.getCssObjectName());
+
+                //Verify the CSS properties of the Carousel
+                //Background Color
+                if (stringsObjectInfo.getCarouselBackgroundColor() != null) {
+                    if (myDynamicElement.getCssValue("background-color").contentEquals(stringsObjectInfo.getCarouselBackgroundColor())) {
+                        System.out.println("Background-Color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor());
+                        HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Background-Color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor(),false);
+                    } else {
+                        System.out.println("Background-Color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor());
+                        HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Background-Color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor(),true);
+                    }
+                }
+                
+                //Verify Border radius
+                if (stringsObjectInfo.getCarouselBorderRaduis() != null) {
+                    if (myDynamicElement.getCssValue("border-top-left-radius").contentEquals(stringsObjectInfo.getCarouselBorderRaduis())) {
+                        System.out.println("Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                    } else {
+                        System.out.println("Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis(),true);
+                    }
+                }
+                
+                //Verify margin
+                if (stringsObjectInfo.getCarouselMargin() != null) {
+                    if (myDynamicElement.getCssValue("margin-left").contentEquals(stringsObjectInfo.getCarouselMargin())) {
+                        System.out.println("Margin" + strPassed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Margin" + strPassed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                    } else {
+                        System.out.println("Margin" + strFailed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Margin" + strFailed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin(),true);
+                    }
+                }
+                
+                //Verify Padding
+                if (stringsObjectInfo.getCarouselPadding() != null) {
+                    if (myDynamicElement.getCssValue("padding-right").contentEquals(stringsObjectInfo.getCarouselPadding())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Padding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                        System.out.println("Padding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Padding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding(),true);
+                        System.out.println("Padding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                    }
+                }
+                
+                //Verify Text-Align
+                if (stringsObjectInfo.getCarouselTextAlign() != null) {
+                    if (myDynamicElement.getCssValue("text-align").contentEquals(stringsObjectInfo.getCarouselTextAlign())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Text-Align" + strPassed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                        System.out.println("Text-Align" + strPassed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Text-Align" + strFailed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign(),true);
+                        System.out.println("Text-Align" + strFailed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                    }
+                }
+                
+                return true;
+            }
+            
+            catch (Exception e) {
+                System.out.println();
+                System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+                System.out.println(e.getMessage());
+                HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+                return false;
+            }
+			finally{
+				myDynamicElement = null;
+			}
+    }
+    
+    public boolean verifyCssObjectProperties(WebElement byWebElement, CssCarouselData stringsObjectInfo){
+
+    	WebElement myDynamicElement;
+    	
+            try {
+            	
+            	//Wait for Element to Load
+                myDynamicElement = byWebElement;
+            	//myDynamicElement= byWebElement;
+                System.out.println();
+                System.out.println(stringsObjectInfo.getCssObjectName());
+                
+        	    
+
+                //Verify the CSS properties of the Carousel
+                //Background Color
+                if (stringsObjectInfo.getCarouselBackgroundColor() != null) {
+                    if (myDynamicElement.getCssValue("background-color").contentEquals(stringsObjectInfo.getCarouselBackgroundColor())) {
+                        System.out.println("Background-Color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor());
+                        HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Background-Color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor(),false);
+                    } else {
+                        System.out.println("Background-Color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor());
+                        HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Background-Color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getCarouselBackgroundColor(),true);
+                    }
+                }
+                
+                //Verify Border radius
+                if (stringsObjectInfo.getCarouselBorderRaduis() != null) {
+                    if (myDynamicElement.getCssValue("border-top-left-radius").contentEquals(stringsObjectInfo.getCarouselBorderRaduis())) {
+                        System.out.println("Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                    } else {
+                        System.out.println("Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-left-radius") + strExpected + stringsObjectInfo.getCarouselBorderRaduis(),true);
+                    }
+                }
+                
+                //Verify margin
+                if (stringsObjectInfo.getCarouselMargin() != null) {
+                    if (myDynamicElement.getCssValue("margin-left").contentEquals(stringsObjectInfo.getCarouselMargin())) {
+                        System.out.println("Margin" + strPassed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Margin" + strPassed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                    } else {
+                        System.out.println("Margin" + strFailed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Margin" + strFailed + myDynamicElement.getCssValue("margin-left") + strExpected + stringsObjectInfo.getCarouselMargin(),true);
+                    }
+                }
+                
+                //Verify Padding
+                if (stringsObjectInfo.getCarouselPadding() != null) {
+                    if (myDynamicElement.getCssValue("padding-right").contentEquals(stringsObjectInfo.getCarouselPadding())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Padding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                        System.out.println("Padding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Padding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding(),true);
+                        System.out.println("Padding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getCarouselPadding());
+                    }
+                }
+                
+                //Verify Text-Align
+                if (stringsObjectInfo.getCarouselTextAlign() != null) {
+                    if (myDynamicElement.getCssValue("text-align").contentEquals(stringsObjectInfo.getCarouselTextAlign())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Text-Align" + strPassed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                        System.out.println("Text-Align" + strPassed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Text-Align" + strFailed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign(),true);
+                        System.out.println("Text-Align" + strFailed + myDynamicElement.getCssValue("text-align") + strExpected + stringsObjectInfo.getCarouselTextAlign());
+                    }
+                }
+                
+                return true;
+            }
+            
+            catch (Exception e) {
+                System.out.println();
+                System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+                System.out.println(e.getMessage());
+                HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+                return false;
+            }
+			finally{
+				myDynamicElement = null;
+			}
+    }
+    
+    
+    
+    
+    public boolean getPatternsPassed() {
+		return patternsPassed;
+	 }
+
+	 public void setPatternsPassed(boolean setFlag) {
+			this.patternsPassed = setFlag;
+	 }
     
     //Hover and Takes the ScreenShot of the page
     public void verifyHover(By byWebElement){
