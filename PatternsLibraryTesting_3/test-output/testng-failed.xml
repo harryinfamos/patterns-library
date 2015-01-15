@@ -26,8 +26,11 @@
           <include name="intialSetUp"/>
           <include name="intialSetUp"/>
           <include name="intialSetUp"/>
+          <include name="testVerifyAccordion"/>
           <include name="testVerifyButton"/>
-          <include name="closureMethod"/>
+          <include name="testVerifyColorSelector"/>
+          <include name="testVerifyDropDown"/>
+          <include name="testVerifyCarousel"/>
           <include name="closureMethod"/>
           <include name="closureMethod"/>
         </methods>

@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Test_suite">
-              <span class="suite-name border-failed">Test suite</span>
+              <span class="suite-name border-skipped">Test suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Test_suite">
-                    <span>C:\Users\hn3270\workspaceSel\PatternsLibraryTesting_3\src\testng-customsuite.xml</span>
+                    <span>C:\Users\hn3270\git\LocalPatternsLibrary\PatternsLibraryTesting_3\src\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +90,41 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">18 methods, 1 failed,   17 passed</span>
+                    <span class="method-stats">27 methods,  5 skipped,  22 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Test_suite" class="hide-methods failed suite-Test_suite"> (hide)</a> <!-- hide-methods failed suite-Test_suite -->
-                      <a href="#" panel-name="suite-Test_suite" class="show-methods failed suite-Test_suite"> (show)</a> <!-- show-methods failed suite-Test_suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Test_suite" class="hide-methods skipped suite-Test_suite"> (hide)</a> <!-- hide-methods skipped suite-Test_suite -->
+                      <a href="#" panel-name="suite-Test_suite" class="show-methods skipped suite-Test_suite"> (show)</a> <!-- show-methods skipped suite-Test_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Test_suite">
+                    <div class="method-list-content skipped suite-Test_suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyAccordion">testVerifyAccordion</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyButton">testVerifyButton</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Test_suite -->
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyDropDown">testVerifyDropDown</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Test_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,7 +135,17 @@
                     <div class="method-list-content passed suite-Test_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyAccordion">testVerifyAccordion</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyAccordian">testVerifyAccordian</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyAccordian">testVerifyAccordian</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyAccordian">testVerifyAccordian</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -140,11 +170,6 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyButton">testVerifyButton</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyButton">testVerifyButton</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -155,6 +180,46 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyButton">testVerifyButton</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyCarousel">testVerifyCarousel</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -166,26 +231,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyPatternsOnSite" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyColorSelector">testVerifyColorSelector</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Test_suite" title="com.tek.test.patterns.VerifyComponents" hash-for-method="testVerifyDropDown">testVerifyDropDown</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -210,65 +255,49 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_suite" class="panel Test_suite">
-          <div class="suite-Test_suite-class-failed">
+          <div class="suite-Test_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.tek.test.patterns.VerifyComponents</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testVerifyAccordion">
+                  </a> <!-- testVerifyAccordion -->
+                  <span class="method-name">testVerifyAccordion</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testVerifyButton">
                   </a> <!-- testVerifyButton -->
                   <span class="method-name">testVerifyButton</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementNotVisibleException: Cannot click on element (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 163 milliseconds
-Build info: version: &apos;2.44.0&apos;, revision: &apos;76d78cf&apos;, time: &apos;2014-10-23 20:03:00&apos;
-System info: host: &apos;TXCDTL147ND5986&apos;, ip: &apos;135.70.91.76&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities [{browserAttachTimeout=0, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.usePerProcessProxy=false, ignoreZoomSetting=false, handlesAlerts=true, version=11, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:22978/, takesScreenshot=true, javascriptEnabled=true, ignoreProtectedModeSettings=true, enableElementCacheCleanup=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=dismiss}]
-Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
-	at com.tek.test.patterns.ButtonVerify.verifyDiabledButton(ButtonVerify.java:96)
-	at com.tek.test.patterns.VerifyComponents.testVerifyButton(VerifyComponents.java:70)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-
-</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyColorSelector">
+                  </a> <!-- testVerifyColorSelector -->
+                  <span class="method-name">testVerifyColorSelector</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyDropDown">
+                  </a> <!-- testVerifyDropDown -->
+                  <span class="method-name">testVerifyDropDown</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_suite-class-failed -->
+          </div> <!-- suite-Test_suite-class-skipped -->
           <div class="suite-Test_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -277,9 +306,23 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testVerifyButton">
-                  </a> <!-- testVerifyButton -->
-                  <span class="method-name">testVerifyButton</span>
+                  <a name="testVerifyAccordian">
+                  </a> <!-- testVerifyAccordian -->
+                  <span class="method-name">testVerifyAccordian</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyAccordian">
+                  </a> <!-- testVerifyAccordian -->
+                  <span class="method-name">testVerifyAccordian</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyAccordian">
+                  </a> <!-- testVerifyAccordian -->
+                  <span class="method-name">testVerifyAccordian</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -294,6 +337,34 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
                   <a name="testVerifyButton">
                   </a> <!-- testVerifyButton -->
                   <span class="method-name">testVerifyButton</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyButton">
+                  </a> <!-- testVerifyButton -->
+                  <span class="method-name">testVerifyButton</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -341,13 +412,6 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVerifyAccordion">
-                  </a> <!-- testVerifyAccordion -->
-                  <span class="method-name">testVerifyAccordion</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="testVerifyButton">
                   </a> <!-- testVerifyButton -->
                   <span class="method-name">testVerifyButton</span>
@@ -362,9 +426,16 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVerifyColorSelector">
-                  </a> <!-- testVerifyColorSelector -->
-                  <span class="method-name">testVerifyColorSelector</span>
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testVerifyCarousel">
+                  </a> <!-- testVerifyCarousel -->
+                  <span class="method-name">testVerifyCarousel</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -379,13 +450,6 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
                   <a name="testVerifyColorSelector">
                   </a> <!-- testVerifyColorSelector -->
                   <span class="method-name">testVerifyColorSelector</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testVerifyDropDown">
-                  </a> <!-- testVerifyDropDown -->
-                  <span class="method-name">testVerifyDropDown</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -407,7 +471,7 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
         </div> <!-- panel Test_suite -->
         <div panel-name="test-xml-Test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hn3270\workspaceSel\PatternsLibraryTesting_3\src\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\hn3270\git\LocalPatternsLibrary\PatternsLibraryTesting_3\src\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -484,7 +548,15 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
               <span class="test-group-name">ATTPatternsTest</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">testVerifyAccordian</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">testVerifyButton</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testVerifyCarousel</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -501,6 +573,10 @@ Session ID: 88da8f12-ac60-49bc-99b9-4250f1bb58bf
               </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">testVerifyButton</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testVerifyCarousel</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -528,79 +604,115 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(18);
+data.addRows(27);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testVerifyButton')
-data.setCell(0, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(0, 3, 86362);
+data.setCell(0, 1, 'testVerifyColorSelector')
+data.setCell(0, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(0, 3, 21241);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testVerifyColorSelector')
 data.setCell(1, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(1, 3, 19021);
+data.setCell(1, 3, 18472);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testVerifyColorSelector')
 data.setCell(2, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(2, 3, 16873);
+data.setCell(2, 3, 16799);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testVerifyColorSelector')
+data.setCell(3, 1, 'testVerifyCarousel')
 data.setCell(3, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(3, 3, 15831);
+data.setCell(3, 3, 15961);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testVerifyButton')
+data.setCell(4, 1, 'testVerifyCarousel')
 data.setCell(4, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(4, 3, 12879);
+data.setCell(4, 3, 15478);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testVerifyButton')
 data.setCell(5, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(5, 3, 11088);
+data.setCell(5, 3, 14036);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testVerifyButton')
+data.setCell(6, 1, 'testVerifyAccordian')
 data.setCell(6, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
-data.setCell(6, 3, 10393);
+data.setCell(6, 3, 13947);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testVerifyDropDown')
-data.setCell(7, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(7, 3, 5735);
+data.setCell(7, 1, 'testVerifyCarousel')
+data.setCell(7, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(7, 3, 12602);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testVerifyDropDown')
-data.setCell(8, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(8, 3, 4987);
+data.setCell(8, 1, 'testVerifyAccordian')
+data.setCell(8, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(8, 3, 12379);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testVerifyColorSelector')
-data.setCell(9, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(9, 3, 4263);
+data.setCell(9, 1, 'testVerifyAccordian')
+data.setCell(9, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(9, 3, 12021);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testVerifyAccordion')
-data.setCell(10, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(10, 3, 2114);
+data.setCell(10, 1, 'testVerifyButton')
+data.setCell(10, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(10, 3, 11356);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'testVerifyButton')
-data.setCell(11, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(11, 3, 1358);
+data.setCell(11, 2, 'com.tek.test.patterns.VerifyPatternsOnSite')
+data.setCell(11, 3, 10448);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testVerifyButton')
+data.setCell(12, 1, 'testVerifyDropDown')
 data.setCell(12, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(12, 3, 1190);
+data.setCell(12, 3, 5227);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testVerifyColorSelector')
+data.setCell(13, 1, 'testVerifyButton')
 data.setCell(13, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(13, 3, 775);
+data.setCell(13, 3, 3357);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testVerifyDropDown')
+data.setCell(14, 1, 'testVerifyButton')
 data.setCell(14, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(14, 3, 551);
+data.setCell(14, 3, 1622);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'testVerifyColorSelector')
+data.setCell(15, 1, 'testVerifyCarousel')
 data.setCell(15, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(15, 3, 381);
+data.setCell(15, 3, 1109);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testVerifyAccordion')
+data.setCell(16, 1, 'testVerifyCarousel')
 data.setCell(16, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(16, 3, 185);
+data.setCell(16, 3, 1005);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'testVerifyAccordion')
+data.setCell(17, 1, 'testVerifyColorSelector')
 data.setCell(17, 2, 'com.tek.test.patterns.VerifyComponents')
-data.setCell(17, 3, 137);
+data.setCell(17, 3, 610);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'testVerifyDropDown')
+data.setCell(18, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(18, 3, 584);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'testVerifyColorSelector')
+data.setCell(19, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(19, 3, 471);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'testVerifyAccordion')
+data.setCell(20, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(20, 3, 211);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'testVerifyAccordion')
+data.setCell(21, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(21, 3, 161);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'testVerifyButton')
+data.setCell(22, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(22, 3, 1);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'testVerifyColorSelector')
+data.setCell(23, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(23, 3, 1);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'testVerifyAccordion')
+data.setCell(24, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(24, 3, 0);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'testVerifyDropDown')
+data.setCell(25, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(25, 3, 0);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testVerifyCarousel')
+data.setCell(26, 2, 'com.tek.test.patterns.VerifyComponents')
+data.setCell(26, 3, 0);
 window.suiteTableData['Test_suite']= { tableData: data, tableDiv: 'times-div-Test_suite'}
 return data;
 }
@@ -620,20 +732,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Test_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.tek.test.patterns.VerifyPatternsOnSite</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">testVerifyAccordian</span>
-                <br/>
-                <span class="ignored-method-name">testVerifyAccordian</span>
-                <br/>
-                <span class="ignored-method-name">testVerifyAccordian</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Test_suite" class="panel">
@@ -649,136 +750,168 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">14100 ms</span>
+                <span class="method-start">13089 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyDropDown</span>
-                <span class="method-start">15459 ms</span>
+                <span class="method-start">14712 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">20447 ms</span>
+                <span class="method-start">19939 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyAccordion</span>
-                <span class="method-start">21223 ms</span>
+                <span class="method-start">20550 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">20712 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closureMethod</span>
-                <span class="method-start">21361 ms</span>
+                <span class="method-start">21718 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.test.patterns.VerifyPatternsOnSite</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">intialSetUp(FireFox)</span>
-                <span class="method-start">21368 ms</span>
+                <span class="method-start">21729 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">24704 ms</span>
+                <span class="method-start">26325 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyAccordian</span>
+                <span class="method-start">37681 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">35793 ms</span>
+                <span class="method-start">50060 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">68533 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closureMethod</span>
-                <span class="method-start">52666 ms</span>
+                <span class="method-start">84012 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.test.patterns.VerifyComponents</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">intialSetUp(Chrome)</span>
-                <span class="method-start">52688 ms</span>
+                <span class="method-start">84043 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">62143 ms</span>
+                <span class="method-start">99836 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyDropDown</span>
-                <span class="method-start">63334 ms</span>
+                <span class="method-start">103193 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">63886 ms</span>
+                <span class="method-start">103778 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyAccordion</span>
-                <span class="method-start">64267 ms</span>
+                <span class="method-start">104250 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">104461 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closureMethod</span>
-                <span class="method-start">64452 ms</span>
+                <span class="method-start">105571 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.test.patterns.VerifyPatternsOnSite</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">intialSetUp(Chrome)</span>
-                <span class="method-start">65637 ms</span>
+                <span class="method-start">107106 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">68320 ms</span>
+                <span class="method-start">110358 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyAccordian</span>
+                <span class="method-start">120806 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">78714 ms</span>
+                <span class="method-start">132828 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">149628 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closureMethod</span>
-                <span class="method-start">94546 ms</span>
+                <span class="method-start">162230 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.test.patterns.VerifyComponents</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">intialSetUp(InternetExplorer)</span>
-                <span class="method-start">95715 ms</span>
-              </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
+                <span class="method-name">intialSetUp(InternetExplorer)</span>
+                <span class="method-start">163490 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">103903 ms</span>
+                <span class="method-start">168221 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyDropDown</span>
-                <span class="method-start">190269 ms</span>
+                <span class="method-start">168222 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">196004 ms</span>
+                <span class="method-start">168222 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyAccordion</span>
-                <span class="method-start">200268 ms</span>
+                <span class="method-start">168223 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">closureMethod</span>
-                <span class="method-start">202383 ms</span>
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">168223 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.tek.test.patterns.VerifyPatternsOnSite</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">intialSetUp(InternetExplorer)</span>
-                <span class="method-start">202398 ms</span>
+                <span class="method-start">168224 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyButton</span>
-                <span class="method-start">205749 ms</span>
+                <span class="method-start">173845 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyAccordian</span>
+                <span class="method-start">187882 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyColorSelector</span>
-                <span class="method-start">218629 ms</span>
+                <span class="method-start">201830 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyCarousel</span>
+                <span class="method-start">223072 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">closureMethod</span>
-                <span class="method-start">237650 ms</span>
+                <span class="method-start">239033 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
