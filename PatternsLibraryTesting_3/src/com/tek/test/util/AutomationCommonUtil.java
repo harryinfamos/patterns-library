@@ -23,7 +23,6 @@ public class AutomationCommonUtil {
     private final String strPassed = " : Passed -- Actual : ";
     private final String strExpected = " Expected :";
     
-    public static boolean patternsPassed=true; 
 
     public AutomationCommonUtil(WebDriver driver){
         this.driver = driver;
@@ -271,6 +270,8 @@ public class AutomationCommonUtil {
 				myDynamicElement = null;
 			}
     }
+    
+    
 
     //Check properties of the drop-down
 	public boolean verifyCssObjectProperties(By byWebElement, CssDropDownData stringsObjectInfo) {
@@ -387,6 +388,122 @@ public class AutomationCommonUtil {
 				myDynamicElement = null;
 			}
 	}
+	
+	
+	public boolean verifyCssObjectProperties(WebElement byWebElement, CssDropDownData stringsObjectInfo) {
+
+    	WebElement myDynamicElement;
+    	
+            try {
+            	
+            	//Wait for Element to Load
+                myDynamicElement = byWebElement;
+                System.out.println();
+                System.out.println(stringsObjectInfo.getCssObjectName());
+
+                //Verify the CSS properties of the Button
+                //Font Family
+                if (stringsObjectInfo.getFontFamily() != null) {
+                    if (myDynamicElement.getCssValue("font-family").contentEquals(stringsObjectInfo.getFontFamily())) {
+                        System.out.println("Font-Family" + strPassed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily());
+                        HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Font-Family" + strPassed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily(),false);
+                    } else {
+                        System.out.println("Font-Family" + strFailed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily());
+                        HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Font-Family" + strFailed + myDynamicElement.getCssValue("font-family") + strExpected + stringsObjectInfo.getFontFamily(),true);
+                    }
+                }
+                
+                //Verify Font Size
+                if (stringsObjectInfo.getFontSize() != null) {
+                    if (myDynamicElement.getCssValue("font-size").contentEquals(stringsObjectInfo.getFontSize())) {
+                        System.out.println("Font-Size" + strPassed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Font-Size" + strPassed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                    } else {
+                        System.out.println("Font-Size" + strFailed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Font-Size" + strFailed + myDynamicElement.getCssValue("font-size") + strExpected + stringsObjectInfo.getFontSize(),true);
+                    }
+                }
+                
+                //Verify Line Height
+                if (stringsObjectInfo.getLineHeight() != null) {
+                    if (myDynamicElement.getCssValue("line-height").contentEquals(stringsObjectInfo.getLineHeight())) {
+                        System.out.println("Line-Height" + strPassed + myDynamicElement.getCssValue("line-height") + strExpected + stringsObjectInfo.getLineHeight());
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Line-Height" + strPassed + myDynamicElement.getCssValue("line-height") + strExpected + stringsObjectInfo.getLineHeight());
+                    } else {
+                        System.out.println("Line-Height" + strFailed + myDynamicElement.getCssValue("line-height") + strExpected + stringsObjectInfo.getLineHeight());
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Line-Height" + strFailed + myDynamicElement.getCssValue("line-height") + strExpected + stringsObjectInfo.getLineHeight(),true);
+                    }
+                }
+                
+                //Verify Button Width - if needed
+                if (stringsObjectInfo.getWidth() != null) {
+                    if (myDynamicElement.getCssValue("width").contentEquals(stringsObjectInfo.getWidth())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getWidth());
+                        System.out.println("Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getWidth());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getWidth(),true);
+                        System.out.println("Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getWidth());
+                    }
+                }
+                
+                //Verify Button Height
+                if (stringsObjectInfo.getHeight() != null) {
+                    if (myDynamicElement.getCssValue("height").contentEquals(stringsObjectInfo.getHeight())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getHeight());
+                        System.out.println("Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getHeight());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getHeight(),true);
+                        System.out.println("Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getHeight());
+                    }
+                }
+                
+                //Verify Button Color
+                if (stringsObjectInfo.getColor() != null) {
+                    if (myDynamicElement.getCssValue("background-color").contentEquals(stringsObjectInfo.getColor())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": background-color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getColor());
+                        System.out.println("background-color" + strPassed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getColor());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": background-color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getColor(),true);
+                        System.out.println("background-color" + strFailed + myDynamicElement.getCssValue("background-color") + strExpected + stringsObjectInfo.getColor());
+                    }
+                }
+                
+                //Verify Button Left Padding
+                if (stringsObjectInfo.getLeftPadding() != null) {
+                    if (myDynamicElement.getCssValue("padding-left").contentEquals(stringsObjectInfo.getLeftPadding())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": LeftPadding" + strPassed + myDynamicElement.getCssValue("padding-left") + strExpected + stringsObjectInfo.getLeftPadding());
+                        System.out.println("LeftPadding" + strPassed + myDynamicElement.getCssValue("padding-left") + strExpected + stringsObjectInfo.getLeftPadding());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": LeftPadding" + strFailed + myDynamicElement.getCssValue("padding-left") + strExpected + stringsObjectInfo.getLeftPadding(),true);
+                        System.out.println("LeftPadding" + strFailed + myDynamicElement.getCssValue("padding-left") + strExpected + stringsObjectInfo.getLeftPadding());
+                    }
+                }
+                
+                //Verify Button Right Padding
+                if (stringsObjectInfo.getRightPadding() != null) {
+                    if (myDynamicElement.getCssValue("padding-right").contentEquals(stringsObjectInfo.getLeftPadding())) {
+                        HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": RightPadding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getRightPadding());
+                        System.out.println("RightPadding" + strPassed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getRightPadding());
+                    } else {
+                        HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": RightPadding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getRightPadding(),true);
+                        System.out.println("RightPadding" + strFailed + myDynamicElement.getCssValue("padding-right") + strExpected + stringsObjectInfo.getRightPadding());
+                    }
+                }
+                return true;
+            }
+            
+            catch (Exception e) {
+                System.out.println();
+                System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+                System.out.println(e.getMessage());
+                HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+                return false;
+            }
+			finally{
+				myDynamicElement = null;
+			}
+	}
+	
     
     //Verify CSS properties for Color Selector
     public boolean verifyCssObjectProperties(By byWebElement, CssColorSelectorData stringsObjectInfo){
@@ -404,7 +521,6 @@ public class AutomationCommonUtil {
                     System.out.println("Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth());
                     HtmlLogUtil.writeToLog(0, stringsObjectInfo.getCssObjectName() + ": Width" + strPassed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth(),false);
                 } else {
-                	patternsPassed=false;
                     System.out.println("Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth());
                     HtmlLogUtil.writeToLog(1, stringsObjectInfo.getCssObjectName() + ": Width" + strFailed + myDynamicElement.getCssValue("width") + strExpected + stringsObjectInfo.getColorSelectorWidth(),false);
                 }
@@ -414,7 +530,6 @@ public class AutomationCommonUtil {
                     System.out.println("Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Height" + strPassed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                 } else {
-                	patternsPassed=false;
                     System.out.println("Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Height" + strFailed + myDynamicElement.getCssValue("height") + strExpected + stringsObjectInfo.getColorSelectorHeight());
                 }
@@ -424,7 +539,6 @@ public class AutomationCommonUtil {
                     System.out.println("Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strPassed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                 } else {
-                	patternsPassed=false;
                     System.out.println("Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Border-Radius" + strFailed + myDynamicElement.getCssValue("border-top-right-radius") + strExpected + stringsObjectInfo.getColorSelectorBorderRadius());
                 }
@@ -434,7 +548,6 @@ public class AutomationCommonUtil {
                     HtmlLogUtil.writeToLog(0,stringsObjectInfo.getCssObjectName() + ": Cursor" + strPassed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                     System.out.println("Cursor" + strPassed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                 } else {
-                	patternsPassed=false;
                     HtmlLogUtil.writeToLog(1,stringsObjectInfo.getCssObjectName() + ": Cursor" + strFailed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                     System.out.println("Cursor" + strFailed + myDynamicElement.getCssValue("cursor") + strExpected + stringsObjectInfo.getColorSelectorCursor());
                 }
@@ -799,15 +912,6 @@ public class AutomationCommonUtil {
     
     
     
-    
-    public boolean getPatternsPassed() {
-		return patternsPassed;
-	 }
-
-	 public void setPatternsPassed(boolean setFlag) {
-			this.patternsPassed = setFlag;
-	 }
-    
     //Hover and Takes the ScreenShot of the page
     public void verifyHover(By byWebElement){
         WebElement webElement = driver.findElement(byWebElement);
@@ -848,7 +952,7 @@ public class AutomationCommonUtil {
            return false;
     	}
     }
-
+    
     //Validate the Link Text
     public void validateElementHref(By byWebElement){
         try {

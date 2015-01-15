@@ -7,13 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterGroups;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.tek.test.util.AutomationCommonUtil;
 import com.tek.test.util.HtmlLogUtil;
 import com.tek.test.util.ReadPropertiesFileUtil;
 import com.tek.test.util.SeleniumDriverUtil;
@@ -24,8 +21,6 @@ public class VerifyPatternsOnSite {
 	  private String baseUrl;
 	  private Properties prop;
 	  private HtmlLogUtil htmlLogUtil;
-	  
-	  private boolean flag;
 	  
 	  @BeforeGroups(enabled = true, groups= { "ATTPatternsTest"})
 	  @Parameters({ "BrowserType" })
@@ -50,7 +45,6 @@ public class VerifyPatternsOnSite {
 	    driver.manage().window().maximize();    
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    
-	    flag= AutomationCommonUtil.patternsPassed;
 	 }
 	 
 	 @Test(priority = 1, enabled = true, groups= { "ATTPatternsTest"})
@@ -107,6 +101,21 @@ public class VerifyPatternsOnSite {
 		 caVerify.verifyCarouselPatternsOnAtt(element);
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("CarouselTest001","Verify Carousel CSS Properties",logPath);
+	 }
+	 
+	 @Test(priority = 5, enabled =true , groups= { "ATTPatternsTest"})
+	 public void testVerifyDropDown() throws Exception{
+		 
+		 Thread.sleep(10000);
+	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
+		 String logPath = htmlLogUtil.createHtmlLogFile("DropDown-Patterns-At&t-VerifyTest"); 
+		 DropDownVerify dVerify = VerifyComponents.dVerify;
+		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop.page");
+		  WebElement element=driver.findElement(By.xpath(".//*[@id='select2-chosen-2']"));
+		  System.out.println(element.getText());
+		 dVerify.verifyDropDownPatternsOnAtt(element);
+		 htmlLogUtil.closeHtmlLogFile();
+		 htmlLogUtil.writeToSummaryLog("DropDownTest001","Verify Drop Down CSS Properties",logPath);
 	 }
 	 
 	 @AfterGroups(groups= { "ATTPatternsTest"})

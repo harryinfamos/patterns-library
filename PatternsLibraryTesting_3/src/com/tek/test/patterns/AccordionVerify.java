@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.tek.test.cssdataLoader.CssAccordionData;
-import com.tek.test.cssdataLoader.CssColorSelectorData;
 import com.tek.test.cssdataLoader.CssDataBuilder;
 import com.tek.test.util.AutomationCommonUtil;
 import com.tek.test.util.ReadPropertiesFileUtil;

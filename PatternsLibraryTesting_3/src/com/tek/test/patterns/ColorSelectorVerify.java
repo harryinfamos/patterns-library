@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.tek.test.cssdataLoader.CssButtonData;
 import com.tek.test.cssdataLoader.CssColorSelectorData;
 import com.tek.test.cssdataLoader.CssDataBuilder;
 import com.tek.test.util.AutomationCommonUtil;

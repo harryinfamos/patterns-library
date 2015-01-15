@@ -1,20 +1,11 @@
 package com.tek.test.patterns;
 
-import java.io.File;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterGroups;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -33,6 +24,7 @@ public class VerifyComponents {
 	  public static ColorSelectorVerify cVerify;
 	  public static AccordionVerify aVerify;
 	  public static CarouselVerify caVerify;
+	  public static DropDownVerify dVerify;
 	  
 	  
 	 @BeforeGroups(enabled = true, groups= { "CSSPatternsTest"})
@@ -81,7 +73,7 @@ public class VerifyComponents {
 		 
 		 //Verify CSS Properties - DropDown
 		 String logPath = htmlLogUtil.createHtmlLogFile("DropDown-Patterns-VerifyTest");
-		 DropDownVerify dVerify = new DropDownVerify(driver);
+		 dVerify = new DropDownVerify(driver);
 		 dVerify.verifyEnabledDropDown();
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("DropDownTest001","Verify Drop-Down CSS Properties",logPath);
