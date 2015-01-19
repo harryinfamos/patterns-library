@@ -64,7 +64,7 @@ public class VerifyPatternsOnSite {
 		 Thread.sleep(10000);
 		 String logPath = htmlLogUtil.createHtmlLogFile("Accordian-Patterns-Veterans-VerifyTest");
 		 AccordionVerify aVerify = VerifyComponents.aVerify;
-		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/wireless/mobile-plans.page");
+		 driver.get("http://www.att.com/smallbusiness/content/shop/wireless/mobile-plans.page");
 //		 WebElement  element =driver.findElement(By.xpath("//div[@class='att-accordion att-accordion--no-box'][1]//div[@class='att-accordion__group'][1]"));
 		 WebElement  element =driver.findElement(By.xpath(".//*[@id='1411672555838']/div/div/div/div[1]/div[1]/div[1]/a"));
 		 aVerify.verifyAccordionPatternsOnAtt(element);	
@@ -79,7 +79,7 @@ public class VerifyPatternsOnSite {
 	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
 		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-At&t-VerifyTest"); 
 		 ColorSelectorVerify cVerify = VerifyComponents.cVerify;
-		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/shop/wireless/all-devices");
+		 driver.get("http://www.att.com/smallbusiness/shop/wireless/all-devices");
 		  WebElement quickView=driver.findElement(By.xpath("//a[@id='quick_view_prod12860124']"));
 		  quickView.click();
 		  Thread.sleep(2000);
@@ -96,7 +96,7 @@ public class VerifyPatternsOnSite {
 	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
 		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-At&t-VerifyTest"); 
 		 CarouselVerify caVerify = VerifyComponents.caVerify;
-		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop.page");
+		 driver.get("http://www.att.com/smallbusiness/content/shop.page");
 		  WebElement element=driver.findElement(By.xpath("//div[@class='bx-pager bx-default-pager']"));
 		 caVerify.verifyCarouselPatternsOnAtt(element);
 		 htmlLogUtil.closeHtmlLogFile();
@@ -110,7 +110,7 @@ public class VerifyPatternsOnSite {
 	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
 		 String logPath = htmlLogUtil.createHtmlLogFile("DropDown-Patterns-At&t-VerifyTest"); 
 		 DropDownVerify dVerify = VerifyComponents.dVerify;
-		 driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop.page");
+		 driver.get("http://www.att.com/smallbusiness/content/shop.page");
 		  WebElement element=driver.findElement(By.xpath(".//*[@id='select2-chosen-2']"));
 		  System.out.println(element.getText());
 		 dVerify.verifyDropDownPatternsOnAtt(element);
