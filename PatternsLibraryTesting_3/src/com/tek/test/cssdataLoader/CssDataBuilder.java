@@ -28,6 +28,11 @@ public class CssDataBuilder {
     private String carouselMargin;
     private String carouselPadding;
 	private String carouselTextAlign;
+	private String floatingTabBackgroundColor;
+    private String floatingTabRadius;
+    private String floatingTabCursor;
+    private String floatingTabFontFamily;
+	private String floatingTabTextAlign;
 
     public CssButtonData buildButton() {
         return new CssButtonData(cssObjectName,fontFamily, fontSize, width, height, lineHeight, color,hoverColor,leftPadding,rightPadding);
@@ -47,6 +52,10 @@ public class CssDataBuilder {
     
     public CssCarouselData carouselBuild() {
         return new CssCarouselData(cssObjectName,carouselBackgroundColor,carouselBorderRaduis,carouselMargin,carouselPadding,carouselTextAlign);
+    }
+    
+    public CssFloatingTabData floatingTabBuild() {
+        return new CssFloatingTabData(cssObjectName,floatingTabBackgroundColor,floatingTabRadius,floatingTabCursor,floatingTabFontFamily,floatingTabTextAlign);
     }
 
 
@@ -161,6 +170,31 @@ public class CssDataBuilder {
     
     public CssDataBuilder withCarouselTextAlign(String carouselTextAlign) {
         this.carouselTextAlign = carouselTextAlign;
+        return this;
+    }
+    
+    public CssDataBuilder withFloatingTabBackgroundColor(String floatingTabBackgroundColor) {
+        this.floatingTabBackgroundColor = floatingTabBackgroundColor;
+        return this;
+    }
+    
+    public CssDataBuilder withFloatingTabRadius(String floatingTabRadius) {
+        this.floatingTabRadius = floatingTabRadius;
+        return this;
+    }
+    
+    public CssDataBuilder withFloatingTabCursor(String floatingTabCursor) {
+        this.floatingTabCursor = floatingTabCursor;
+        return this;
+    }
+    
+    public CssDataBuilder withFloatingTabFontFamily(String floatingTabFontFamily) {
+        this.floatingTabFontFamily = floatingTabFontFamily;
+        return this;
+    }
+    
+    public CssDataBuilder withFloatingTabTextAlign(String floatingTabTextAlign) {
+        this.floatingTabTextAlign = floatingTabTextAlign;
         return this;
     }
     

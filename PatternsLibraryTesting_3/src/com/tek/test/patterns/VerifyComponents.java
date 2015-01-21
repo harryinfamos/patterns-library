@@ -25,6 +25,7 @@ public class VerifyComponents {
 	  public static AccordionVerify aVerify;
 	  public static CarouselVerify caVerify;
 	  public static DropDownVerify dVerify;
+	  public static FloatingTabVerify fVerify;
 	  
 	  
 	 @BeforeGroups(enabled = true, groups= { "CSSPatternsTest"})
@@ -110,6 +111,17 @@ public class VerifyComponents {
 		 caVerify.verifyCarousel();	
 		 htmlLogUtil.closeHtmlLogFile();
 		 htmlLogUtil.writeToSummaryLog("Accordion001","Verify Carousel CSS Properties",logPath);
+	 }
+	 
+	 @Test(priority = 6, enabled = true, groups= { "CSSPatternsTest"})
+	 public void testVerifyFloatingTab() throws Exception{
+		 
+		//Verify CSS Properties - Accordion
+		 String logPath = htmlLogUtil.createHtmlLogFile("FloatingTab-Patterns-VerifyTest");
+		 fVerify = new FloatingTabVerify(driver);
+		 fVerify.verifyFloatingTab();	
+		 htmlLogUtil.closeHtmlLogFile();
+		 htmlLogUtil.writeToSummaryLog("FloatingTab001","Verify FloatingTab CSS Properties",logPath);
 	 }
 
 	 @AfterGroups(groups= { "CSSPatternsTest"})

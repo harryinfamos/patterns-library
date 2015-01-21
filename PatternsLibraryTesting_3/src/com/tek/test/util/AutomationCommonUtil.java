@@ -5,6 +5,7 @@ import com.tek.test.cssdataLoader.CssButtonData;
 import com.tek.test.cssdataLoader.CssCarouselData;
 import com.tek.test.cssdataLoader.CssColorSelectorData;
 import com.tek.test.cssdataLoader.CssDropDownData;
+import com.tek.test.cssdataLoader.CssFloatingTabData;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -699,6 +700,89 @@ public class AutomationCommonUtil {
 				myDynamicElement = null;
 			}
     }
+    
+    //Verify CSS properties for Color Selector
+    public boolean verifyCssObjectProperties(By byWebElement, CssFloatingTabData stringsObjectInfo){
+
+        try {
+        	
+            WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+            		.until(ExpectedConditions.presenceOfElementLocated(byWebElement));
+
+            System.out.println();
+            System.out.println(stringsObjectInfo.getCssObjectName());
+
+            if (stringsObjectInfo.getFloatingTabBackgroundColor() != null) 
+            {
+            	writeHtmlLog("background-color", "Background-Color", stringsObjectInfo.getFloatingTabBackgroundColor(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabRadius() != null) 
+            {
+            	writeHtmlLog("border-top-right-radius", "Border-Radius", stringsObjectInfo.getFloatingTabRadius(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabCursor() != null) 
+            {
+            	writeHtmlLog("cursor", "Cursor", stringsObjectInfo.getFloatingTabCursor(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabFontFamily() != null) 
+            {
+            	writeHtmlLog("font-family", "Font-Fmaily", stringsObjectInfo.getFloatingTabFontFamily(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabTextAlign() != null) 
+            {
+            	writeHtmlLog("text-align", "Text-Align", stringsObjectInfo.getFloatingTabTextAlign(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println();
+            System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+            System.out.println(e.getMessage());
+            HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+            return false;
+        }
+    }
+    
+    public boolean verifyCssObjectProperties(WebElement byWebElement, CssFloatingTabData stringsObjectInfo){
+
+        try {
+        	
+            WebElement myDynamicElement = byWebElement;
+
+            System.out.println();
+            System.out.println(stringsObjectInfo.getCssObjectName());
+
+            if (stringsObjectInfo.getFloatingTabBackgroundColor() != null) 
+            {
+            	writeHtmlLog("background-color", "Background-Color", stringsObjectInfo.getFloatingTabBackgroundColor(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabRadius() != null) 
+            {
+            	writeHtmlLog("border-top-right-radius", "Border-Radius", stringsObjectInfo.getFloatingTabRadius(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabCursor() != null) 
+            {
+            	writeHtmlLog("cursor", "Cursor", stringsObjectInfo.getFloatingTabCursor(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabFontFamily() != null) 
+            {
+            	writeHtmlLog("font-family", "Font-Fmaily", stringsObjectInfo.getFloatingTabFontFamily(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            if (stringsObjectInfo.getFloatingTabTextAlign() != null) 
+            {
+            	writeHtmlLog("text-align", "Text-Align", stringsObjectInfo.getFloatingTabTextAlign(),stringsObjectInfo.getCssObjectName() ,myDynamicElement);
+            }
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println();
+            System.out.println("Exception Occurred : Check Exception for Element -" + stringsObjectInfo.getCssObjectName());
+            System.out.println(e.getMessage());
+            HtmlLogUtil.writeToLog(1,"Exception Occurred for Element : " + stringsObjectInfo.getCssObjectName() + ": " + e.getMessage(),true);
+            return false;
+        }
+    }
+    
     
     public void writeHtmlLog(String property, String name, String expected,String objName,WebElement myDynamicElement)
     {

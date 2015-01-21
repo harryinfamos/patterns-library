@@ -118,6 +118,21 @@ public class VerifyPatternsOnSite {
 		 htmlLogUtil.writeToSummaryLog("DropDownTest001","Verify Drop Down CSS Properties",logPath);
 	 }
 	 
+	 @Test(priority = 6, enabled =true , groups= { "ATTPatternsTest"})
+	 public void testVerifyFloatingTab() throws Exception{
+		 
+		 Thread.sleep(10000);
+	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
+		 String logPath = htmlLogUtil.createHtmlLogFile("DropDown-Patterns-At&t-VerifyTest"); 
+		 FloatingTabVerify fVerify = VerifyComponents.fVerify;
+		 driver.get("http://www.att.com/smallbusiness/shop/wireless/all-devices");
+		  WebElement element=driver.findElement(By.xpath("//a[@class='tabs__item-link' and contains(text(),'Smartphones')]"));
+		  System.out.println(element.getText());
+		 fVerify.verifyFloatingTabPatternsOnAtt(element);
+		 htmlLogUtil.closeHtmlLogFile();
+		 htmlLogUtil.writeToSummaryLog("DropDownTest001","Verify Drop Down CSS Properties",logPath);
+	 }
+	 
 	 @AfterGroups(groups= { "ATTPatternsTest"})
 	 public void closureMethod() throws Exception {
 		 driver.close();
