@@ -79,8 +79,8 @@ public class VerifyPatternsOnSite {
 	     // driver.get("http://zltv1019.vci.att.com:8791/smallbusiness/content/shop/internet-phone-tv/business-phone.page");
 		 String logPath = htmlLogUtil.createHtmlLogFile("ColorSelector-Patterns-At&t-VerifyTest"); 
 		 ColorSelectorVerify cVerify = VerifyComponents.cVerify;
-		 driver.get("http://www.att.com/smallbusiness/shop/wireless/all-devices");
-		  WebElement quickView=driver.findElement(By.xpath("//a[@id='quick_view_prod12860124']"));
+		 driver.get("http://www.att.com/smallbusiness/shop/wireless/all-devices/smartphones");
+		  WebElement quickView=driver.findElement(By.xpath("//a[@id='quick_view_prod12390101']"));
 		  quickView.click();
 		  Thread.sleep(2000);
 		  WebElement element=driver.findElement(By.xpath("//div[@class='att-radio att-color-selector__item'][1]"));
