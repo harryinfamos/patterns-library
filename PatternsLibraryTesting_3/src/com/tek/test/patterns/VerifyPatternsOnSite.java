@@ -32,13 +32,18 @@ public class VerifyPatternsOnSite {
 	   
 	    //Read URL and Browser type from configuration
 	    baseUrl = prop.getProperty("BaseAttUrl");
+	    String attSummaryReportName = prop.getProperty("AttSummaryReportName");
+	    String attLogFolderName= prop.getProperty("AttLogFolderName");
 		 
 	    //select BrowserType  
 	    driver = new SeleniumDriverUtil().loadSeleniumDriver(browserType); 
 	 
 	    //Create Custom HTML Log
-	    htmlLogUtil = new HtmlLogUtil(driver);
-	    htmlLogUtil.createSummaryHtmlLogFile(2);
+	    htmlLogUtil = new HtmlLogUtil(driver, attSummaryReportName, attLogFolderName);
+	    HtmlLogUtil.testsPassed = 0;
+	    HtmlLogUtil.testsFailed = 0;
+	    HtmlLogUtil.index = 0;
+	    htmlLogUtil.createSummaryHtmlLogFile(6);
 	    
 	    //Launch URL and Maximize
 	    driver.get(baseUrl);

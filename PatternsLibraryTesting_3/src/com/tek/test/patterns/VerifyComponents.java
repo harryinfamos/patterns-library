@@ -44,7 +44,10 @@ public class VerifyComponents {
 	 
 	    //Create Custom HTML Log
 	    htmlLogUtil = new HtmlLogUtil(driver);
-	    htmlLogUtil.createSummaryHtmlLogFile(4);
+	    HtmlLogUtil.testsPassed = 0;
+	    HtmlLogUtil.testsFailed = 0;
+	    HtmlLogUtil.index = 0;
+	    htmlLogUtil.createSummaryHtmlLogFile(6);
 	    
 	    //Trigger AutoIt
 	   // new SeleniumDriverUtil().triggerAutoit(browserType);   	    

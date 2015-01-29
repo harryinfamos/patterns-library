@@ -30,13 +30,13 @@ public class HtmlLogUtil {
     private static String logSummaryPath;
     private static String currDir;
     private static String strExecutionSummary;
-    private static int testsPassed = 0;
-    private static int testsFailed = 0;
+    public static int testsPassed = 0;
+    public static int testsFailed = 0;
 
     public static BufferedWriter output;
     public static BufferedWriter summaryOutput;
     private static int intIncrementer;
-    private static int index = 0;
+    public static int index = 0;
     private static File summaryLogFile;
     private static File logFile;
     public static String testResult = "Pass";
@@ -51,6 +51,15 @@ public class HtmlLogUtil {
         logSummaryTitle = prop.getProperty("SummaryReportName");
         logSummaryFolderName = prop.getProperty("SummaryFolderName");
         logFolderName = prop.getProperty("logFolderName");
+
+    }
+    
+    public HtmlLogUtil(WebDriver driver, String attSummaryReportName, String attLogFolderName) throws IOException {
+        this.driver = driver;
+        Properties prop = new ReadPropertiesFileUtil().readPropertiesFile("Resources/config.properties");
+        logSummaryTitle = attSummaryReportName;
+        logSummaryFolderName = prop.getProperty("SummaryFolderName");
+        logFolderName = attLogFolderName;
 
     }
     
